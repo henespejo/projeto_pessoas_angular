@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <button class="btn btn-primary m-1" (click)="cadastrar()"> Cadastrar </button>
+  <h2>Lista de Pessoas</h2>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Email</th>
+        <th scope="col">País</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of persons">
+        <th scope="row"> {{ person.id }} </th>
+        <td> {{ person.nome }} </td>
+        <td> {{ person.idade }} </td>
+        <td> {{ person.email }} </td>
+        <td> {{ person.pais }} </td>
+        <td>
+            <button class="btn btn-primary m-1" (click)="irParaEditar(person.id)"> Editar </button>
+            <button class="btn btn-danger m-1" (click)="remover(person.id)"> Deletar </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
